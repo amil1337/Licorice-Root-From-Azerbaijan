@@ -42,3 +42,58 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Product Modal functionality (existing code)
+    const productCards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('productModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeButton = document.querySelector('.close-button');
+
+    productCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const imgSrc = card.dataset.imageSrc;
+            modalImage.src = imgSrc;
+            modal.classList.add('active'); // Use 'active' class for visibility
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // --- START: Hero Image Carousel Functionality (NEW) ---
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+
+    // Function to display a specific slide
+    function showSlide(index) {
+        heroSlides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active'); // Make the current slide visible
+            } else {
+                slide.classList.remove('active'); // Hide other slides
+            }
+        });
+    }
+
+    // Function to move to the next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % heroSlides.length; // Cycle through slides
+        showSlide(currentSlide);
+    }
+
+    // Initialize the first slide (ensure it's active when page loads)
+    showSlide(currentSlide);
+
+    // Change slide every 5 seconds (5000 milliseconds)
+    setInterval(nextSlide, 5000);
+    // --- END: Hero Image Carousel Functionality (NEW) ---
+});
