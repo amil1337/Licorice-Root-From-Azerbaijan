@@ -1,0 +1,767 @@
+/* Universal Styles - No change */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #333;
+  --text-color: #555;
+  --light-bg: rgb(255, 254, 253);
+  --border-color: rgba(90, 90, 90, 0.2);
+
+  /* New: Social Media Brand Colors */
+  --linkedin-blue: #0a66c2;
+  --whatsapp-green: #25d366;
+  --email-color: #d44638; /* Standard red for Gmail/general email */
+}
+
+body {
+  background-color: var(--light-bg);
+  font-family: "Satoshi", Arial, sans-serif; /* Changed default font to Satoshi if available, with Arial as fallback */
+  color: var(--text-color); /* Added text color for body */
+}
+
+@font-face {
+  font-family: "CabinetGrotesk";
+  src: url("../assets/fonts/CabinetGrotesk-Variable.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Variable.ttf") format("truetype");
+  font-display: swap;
+}
+
+.container {
+  max-width: 1300px;
+  padding-inline: 1rem;
+  margin: auto;
+}
+
+.nav-bg {
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(10px);
+  top: 0;
+  z-index: 100000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+  padding-block: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  text-decoration: none;
+  color: var(
+    --secondary-color
+  ); /* Changed from 'w' to a defined color variable */
+}
+
+.logo:hover {
+  text-decoration: underline;
+}
+
+.logo span {
+  font: 500 1.8rem "CabinetGrotesk", sans-serif;
+  color: var(--secondary-color);
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+.hero-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 80px;
+}
+
+.hero-wrapper img {
+  border-radius: 1.5rem;
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-wrapper .about-me {
+  flex: 1;
+  padding-left: 1rem;
+}
+
+.about-me .name-surname {
+  font: 600 2.8rem "CabinetGrotesk", sans-serif;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.about-me .name-surname span {
+  color: var(--primary-color);
+}
+
+.about-me .splitter {
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.about-me .job {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.about-me .job strong {
+  color: var(--primary-color);
+}
+
+.about-me .intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  color: var(--text-color);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-color); /* Default text color for phone/email */
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link i {
+  margin-right: 0.8rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.contact-link.email i {
+  color: var(--email-color);
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.social-links .fa-linkedin {
+  color: var(--linkedin-blue);
+}
+
+.social-links .fa-instagram {
+  color: #c13584;
+}
+
+.social-links a[aria-label="Instagram"] {
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background-clip: text;
+}
+
+.social-links .fa-whatsapp {
+  color: var(--whatsapp-green);
+}
+
+@media (max-width: 992px) {
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+    min-height: auto;
+  }
+
+  .hero-wrapper img {
+    max-width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .about-me {
+    padding-left: 0;
+  }
+
+  .about-me .splitter {
+    margin-inline: auto;
+  }
+
+  .about-me .name-surname {
+    font-size: 2.2rem;
+  }
+
+  .about-me .job {
+    font-size: 1.4rem;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-links a {
+    font-size: 1.5rem;
+  }
+
+  .contact-link {
+    font-size: 1.1rem;
+  }
+
+  /* --- Logo Responsiveness --- */
+
+  .logo img {
+    width: 45px; /* Makes the logo image smaller */
+  }
+
+  .logo span {
+    font-size: 1.4rem; /* Makes the logo text smaller */
+    margin-left: 0.4rem; /* Adjusts the space between logo image and text */
+  }
+  /* ------------------------- */
+}
+
+.about-section {
+  padding-block: 5rem;
+  background-color: var(--light-bg);
+}
+
+.about-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-title {
+  font-family: "CabinetGrotesk", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 100px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-text {
+  flex: 1.5;
+  line-height: 1.8;
+}
+
+.about-text p {
+  font-family: "Satoshi", Arial, sans-serif;
+  font-size: 1.15rem; /* This font size will apply */
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-text p strong {
+  color: var(--secondary-color);
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for the About section (from previous response) */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image {
+    min-width: unset;
+    max-width: 80%;
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    flex: unset;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title::after {
+    width: 80px;
+  }
+
+  .about-text p {
+    font-size: 1rem; /* This font size will apply on smaller screens */
+  }
+
+  .about-image {
+    max-width: 90%;
+  }
+}
+
+/* New: Products Section Styles */
+.products-section {
+  padding-block: 5rem;
+  background-color: #f9f9f9; /* A slightly different background for contrast */
+}
+
+/* Re-using section-title from About section for consistency */
+
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid for cards */
+  gap: 2rem; /* Space between cards */
+  margin-top: 3rem; /* Space below the section title */
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Ensures image corners are rounded */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem; /* Padding below the text in the card */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent card appearance */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-bottom: 1rem; /* Space between image and product name */
+}
+
+.product-card h3 {
+  font-family: "CabinetGrotesk", sans-serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  padding-inline: 1rem; /* Horizontal padding for the product name */
+}
+
+/* Modal Styles */
+.modal {
+  visibility: hidden; /* Use visibility instead of display */
+  position: fixed;
+  z-index: 100001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex; /* Keep display: flex for centering */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Add visibility to transition */
+}
+
+.modal.active {
+  visibility: visible; /* Make visible when active */
+  opacity: 1; /* Fade in */
+}
+
+.modal-content {
+  position: relative; /* For positioning the close button */
+  background-color: #fefefe; /* Background of the modal box */
+  padding: 20px;
+  border-radius: 1rem;
+  max-width: 80%; /* Max width of the modal image container */
+  max-height: 90vh; /* Max height of the modal image container */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex; /* Use flex for centering the image inside */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%; /* Ensure image fits within modal content */
+  max-height: 70vh; /* Control image height within modal */
+  display: block; /* Remove extra space below image */
+  border-radius: 0.8rem; /* Rounded corners for the modal image */
+}
+
+.close-button {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #ffffff;
+  font-size: 40px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: var(--primary-color); /* Change color on hover/focus */
+  text-decoration: none;
+}
+
+/* Responsive adjustments for Products section and Modal */
+@media (max-width: 992px) {
+  .product-cards-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Adjust card size */
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .modal-content img {
+    max-height: 75vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-cards-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+
+  .product-card img {
+    height: 180px; /* Slightly smaller image on mobile */
+  }
+
+  .product-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    padding: 10px;
+  }
+  .modal-content img {
+    max-height: 80vh;
+  }
+  .close-button {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+/* New: Partner Section Styles */
+.partner-section {
+  padding-block: 5rem;
+  background-color: var(
+    --light-bg
+  ); /* Use the light background for contrast with products */
+}
+
+/* Re-using section-title for consistency */
+
+.partner-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 2rem; /* Add some space below the section title */
+  /* To mirror hero section, potentially reverse order for visual balance */
+  flex-direction: row-reverse;
+}
+
+.partner-wrapper img {
+  border-radius: 1.5rem;
+  flex: 1;
+  max-width: 50%; /* Same max-width as hero image */
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.partner-info {
+  flex: 1;
+  /* Adjust padding if needed based on the partner image's side */
+  padding-right: 1rem;
+}
+
+.partner-info .partner-name {
+  font: 600 2.8rem "CabinetGrotesk", sans-serif;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.partner-info .partner-name span {
+  color: var(--primary-color);
+}
+
+/* Re-using splitter from about-me */
+.partner-info .splitter {
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin-bottom: 1rem;
+  border-radius: 2px;
+}
+
+.partner-info .partner-role {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.partner-info .partner-intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  color: var(--text-color);
+}
+
+/* Re-using contact-info styles */
+.partner-info .contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Responsive adjustments for Partner section */
+@media (max-width: 992px) {
+  .partner-wrapper {
+    flex-direction: column; /* Stack image and info vertically */
+    text-align: center;
+    min-height: auto;
+  }
+
+  .partner-wrapper img {
+    max-width: 80%; /* Adjust image size */
+    margin-bottom: 2rem;
+  }
+
+  .partner-info {
+    padding-right: 0; /* Remove side padding */
+  }
+
+  .partner-info .splitter {
+    margin-inline: auto; /* Center splitter */
+  }
+
+  .partner-info .partner-name {
+    font-size: 2.2rem;
+  }
+
+  .partner-info .partner-role {
+    font-size: 1.4rem;
+  }
+
+  .partner-info .contact-info {
+    align-items: center; /* Center contact links */
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-info .partner-name {
+    font-size: 1.8rem;
+  }
+
+  .partner-info .partner-role {
+    font-size: 1.2rem;
+  }
+
+  .partner-info .partner-intro-text {
+    font-size: 1rem;
+  }
+}
+
+/* New: Contact Form Section Styles */
+.contact-form-section {
+  padding-block: 5rem;
+  background-color: #f9f9f9; /* Use a slightly different background for contrast */
+}
+
+.contact-form {
+  max-width: 700px; /* Limit form width for better readability */
+  margin: 3rem auto 0 auto; /* Center the form below the title */
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block; /* Make label appear above input */
+  font-family: "Satoshi", Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-family: "Satoshi", Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2); /* Light green shadow on focus */
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px;
+}
+
+.submit-button {
+  display: block; /* Make button full width of its container */
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "CabinetGrotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.submit-button:active {
+  transform: translateY(0); /* Return to original position on click */
+}
+
+/* Responsive adjustments for Contact Form */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
