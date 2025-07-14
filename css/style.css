@@ -99,7 +99,7 @@ nav {
 /* The carousel specific styles now handle the image display */
 
 .hero-wrapper .about-me {
-    flex: 1;
+    flex: 0 0 50%; /* MODIFIED: Explicitly set flex-basis to 50% for desktop */
     padding-left: 1rem;
 }
 
@@ -213,7 +213,7 @@ nav {
 /* START: Hero Image Carousel Styles */
 .hero-wrapper .hero-image-carousel {
     position: relative; /* Essential for positioning slides inside */
-    flex: 1; /* Allows it to take up half the width as before */
+    flex: 0 0 50%; /* MODIFIED: Explicitly set flex-basis to 50% for desktop */
     max-width: 50%; /* Limits its maximum width */
     height: 500px; /* **Crucial:** Gives the carousel a fixed height */
     border-radius: 1.5rem;
@@ -248,12 +248,15 @@ nav {
 
     /* Target the carousel container now */
     .hero-wrapper .hero-image-carousel {
+        flex: unset; /* MODIFIED: Remove explicit flex behavior in column layout */
+        width: 100%; /* Explicitly set width to 100% for better responsiveness */
         max-width: 80%; /* Adjust size for tablet */
         margin-bottom: 2rem;
         height: 400px; /* Adjust height for tablet */
     }
 
     .about-me {
+        flex: unset; /* MODIFIED: Remove explicit flex behavior in column layout */
         padding-left: 0;
     }
 
@@ -277,6 +280,7 @@ nav {
 @media (max-width: 768px) {
     /* Further adjust carousel for mobile */
     .hero-wrapper .hero-image-carousel {
+        width: 100%; /* Explicitly set width to 100% for better responsiveness */
         max-width: 90%; /* Adjust size for mobile */
         height: 300px; /* Adjust height for mobile */
     }
