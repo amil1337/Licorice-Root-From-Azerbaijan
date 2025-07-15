@@ -76,7 +76,7 @@ nav {
 }
 
 .logo span {
-    font: 500 1.8rem "CabinetGrotesk", sans-serif;
+    font: 500 2rem "CabinetGrotesk", sans-serif;
     color: var(--secondary-color);
     margin-left: 0.5rem;
     white-space: nowrap;
